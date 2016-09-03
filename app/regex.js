@@ -6,11 +6,11 @@ exports.regexAnswers = {
   },
 
   containsRepeatingLetter: function(str) {
-    return /(\D)(\1)/.test(str)
+    return /(\D)(\1)/.test(str);
   },
 
   endsWithVowel: function(str) {
-    return /([aA]|[eE]|[iI]|[oO]|[uU])$/.test(str)
+    return /([aA]|[eE]|[iI]|[oO]|[uU])$/.test(str);
   },
 
   captureThreeNumbers: function(str) {
@@ -19,10 +19,10 @@ exports.regexAnswers = {
   },
 
   matchesPattern: function(str) {
-    return /^\d{3}-\d{3}-\d{4}$/.test(str)
+    return /^\d{3}-\d{3}-\d{4}$/.test(str);
   },
 
   isUSD: function(str) {
-
+    return /^\$\d{1,3}(,\d{3})*(\.\d{2})?$/.test(str);
   }
 };

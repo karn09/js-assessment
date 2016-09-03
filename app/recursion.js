@@ -1,34 +1,43 @@
 exports = typeof window === 'undefined' ? global : window;
 
 exports.recursionAnswers = {
-  listFiles: function(data, dirName) {
-    var files = [];
+	listFiles: function (data, dirName) {
+		var files = [];
+		var dirs = [];
 
-    (function process(dir) {
-        dir.files.forEach(function (file) {
-          if (typeof file === 'string') {
-            files.push(file);
-          } else {
-            return process(file);
-          }
-        })
-    })(data);
+		(function process(dir) {
 
-    return files;
-  },
+      var currentDir = dir.dir;
+      dirs.push(currentDir);
 
-  permute: function(arr) {
-    var permArr = [];
+			dir.files.forEach(function (file) {
+				if (typeof file === 'string') {
+					if (!dirName || dirs.indexOf(dirName) > -1) {
+						files.push(file);
+					}
+				} else {
+					return process(file);
+				}
+			})
+      dirs.pop();
 
-    return permArr;
-  },
+		})(data);
 
-  fibonacci: function(n) {
+		return files;
+	},
+
+	permute: function (arr) {
+		var permArr = [];
+
+		return permArr;
+	},
+
+	fibonacci: function (n) {
 
 
-  },
+	},
 
-  validParentheses: function(n) {
+	validParentheses: function (n) {
 
-  }
+	}
 };
