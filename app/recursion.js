@@ -7,8 +7,8 @@ exports.recursionAnswers = {
 
 		(function process(dir) {
 
-      var currentDir = dir.dir;
-      dirs.push(currentDir);
+			var currentDir = dir.dir;
+			dirs.push(currentDir);
 
 			dir.files.forEach(function (file) {
 				if (typeof file === 'string') {
@@ -19,7 +19,7 @@ exports.recursionAnswers = {
 					return process(file);
 				}
 			})
-      dirs.pop();
+			dirs.pop();
 
 		})(data);
 
@@ -27,9 +27,7 @@ exports.recursionAnswers = {
 	},
 
 	permute: function (arr) {
-		var permArr = [];
 
-		return permArr;
 	},
 
 	fibonacci: function (n) {
